@@ -1,0 +1,6 @@
+﻿/avatars/*
+/events/*
+!/avatars
+!/events
+!/events/defaultEvent.png
+!/avatars/defaultAvatar.png

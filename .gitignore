@@ -1,0 +1,10 @@
+TalentsApi/obj/*
+TalentsApi.IntegrationTests/obj/*
+TalentsApiTests/obj/*
+TalentsApi/bin/*
+TalentsApi.IntegrationTests/bin/*
+TalentsApiTests/bin/*
+/TalentsApi/TalentsApi/bin/Debug/net6.0
+/TalentsApi/TalentsApi/obj/Debug/net6.0
+/TalentsApi/TalentsApi/obj/Docker
+/TalentsApi/TalentsApi/obj

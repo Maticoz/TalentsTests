@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS8603: Możliwe zwrócenie odwołania o wartości null.
+dotnet_diagnostic.CS8603.severity = silent
+
+# CS8600: Konwertowanie literału null lub możliwej wartości null na nienullowalny typ.
+dotnet_diagnostic.CS8600.severity = silent

@@ -1,0 +1,40 @@
+version: '3.4'
+
+volumes:
+  datafiles:
+
+services:
+  #DataBase Service
+  database:
+    image: mysql:8.0.22
+    ports:
+      - "3306:3306"
+    volumes:
+      - datafiles:/var/lib/mysql
+      - "~/sql-scripts/setup.sql:/docker-entrypoint-initdb.d/1.sql"
+    restart: always
+    tty: true
+    environment: 
+      MYSQL_ROOT_PASSWORD: Root0++
+      MYSQL_USER: newuser
+      MYSQL_PASSWORD: pass@word1234
+      MYSQL_DATABASE: TalentsDB
+
+  #Api  Service
+  talentsapi:
+    build:
+      context: .
+      dockerfile: ./TalentsApi/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on: 
+      - database
+    restart: always
+    environment: 
+      DBHOST: database
+      MYSQL_ROOT_PASSWORD: Root0++
+      MYSQL_USER: newuser
+      MYSQL_PASSWORD: pass@word1234
+      MYSQL_DATABASE: TalentsDB
+      ASPNETCORE_ENVIRONMENT: Development
